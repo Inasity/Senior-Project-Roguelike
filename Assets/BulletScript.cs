@@ -22,7 +22,7 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter (Collider hitInfo)
     {
-        Debug.Log(hitInfo.name);
+        // Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
 }
