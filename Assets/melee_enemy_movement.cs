@@ -5,7 +5,7 @@ using UnityEngine;
 public class melee_enemy_movement : MonoBehaviour
 {
     // Enemy movement variables
-    public float speed = 5.0f;
+    public float speed = 10.0f;
     public float accel = 14.0f;
     public float maxVelocityChange = 10.0f;
 
@@ -22,7 +22,8 @@ public class melee_enemy_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // set the path to player
+        // if in the same room, set the path to player
+        // *** check room here ***
         Vector3 path = player.position - transform.position;
         
         // Pathing variables
@@ -34,7 +35,7 @@ public class melee_enemy_movement : MonoBehaviour
 
         // Move to player
         if(step > dist){
-            // If close enough to the player, do something
+            // If close enough to the player, do something *** Add melee damage code ***
 
             // Stop when touching player
             transform.position = player.position;
