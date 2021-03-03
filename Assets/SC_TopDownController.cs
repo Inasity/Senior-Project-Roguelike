@@ -48,7 +48,7 @@ public class SC_TopDownController : MonoBehaviour
         );
 
         //Hide the cursor
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     void FixedUpdate()
