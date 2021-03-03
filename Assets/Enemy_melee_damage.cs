@@ -49,7 +49,7 @@ public class Enemy_melee_damage : MonoBehaviour
         if(justHit == true) hitTime += Time.deltaTime;
 
         // If we reached cooldown, reset hit time to zero to allow player to hit
-        if(hitTime >= HIT_COOLDOWN){
+        if(hitTime >= HIT_COOLDOWN) {
             hitTime = 0;
             justHit = false;
         }

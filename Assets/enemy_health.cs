@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemy_health : MonoBehaviour
 {
     // Private variables 
-    int health;
+    public int health;
     private const float DAMAGE_TIMER_COOLDOWN = .09f;
     private float damageTimeElapse;
     private GameObject capsule;
@@ -56,7 +56,13 @@ public class enemy_health : MonoBehaviour
         // Check if Player weapons have damaged the enemy
         if(other.tag == "Weapon"){
             // Bullet does one damage
-            if(other.name == "Bullet(Clone)") health--;
+            if(other.name == "Bullet(Clone)") {
+                health--;
+                
+                // Destroy the bullet
+                // Debug.Log(hitInfo.name);
+                //Destroy(other);
+            }
 
             // *** Add other player weapons here ***
 
