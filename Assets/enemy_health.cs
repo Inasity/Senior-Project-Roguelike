@@ -6,10 +6,19 @@ public class enemy_health : MonoBehaviour
 {
     // Private variables 
     int health;
+    private const float DAMAGE_TIMER_COOLDOWN = .09f;
+    private float damageTimeElapse;
+    private GameObject capsule;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set time elapse
+        damageTimeElapse = DAMAGE_TIMER_COOLDOWN;
+
+        // Set capsule gameobject
+        capsule = transform.GetChild(0).gameObject;
+
         // Assign base enemy health number depending on tag
         if(gameObject.tag == "Melee Enemy") {
             health = 3;
@@ -24,6 +33,17 @@ public class enemy_health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Do something when hit
+        // Turn hit timer on to change to normal color
+        if(capsule.GetComponent<MeshRenderer>().material.color == Color.red){
+            damageTimeElapse -= Time.deltaTime;
+
+            // When damage timer is up, reset color to white
+            if(damageTimeElapse < 0){
+                damageTimeElapse = DAMAGE_TIMER_COOLDOWN;
+                capsule.GetComponent<MeshRenderer>().material.color = Color.white;
+            }
+        }
         // Check if no more health left
         if(health <= 0){
             // Kill enemy
@@ -35,13 +55,14 @@ public class enemy_health : MonoBehaviour
     {
         // Check if Player weapons have damaged the enemy
         if(other.tag == "Weapon"){
-            // Bullet
-            if(other.name == "Bullet(Clone)"){
-                health--;
-            }
-            // *** Add other weapons here ***
+            // Bullet does one damage
+            if(other.name == "Bullet(Clone)") health--;
+
+            // *** Add other player weapons here ***
 
             // *** Do stuff when hit, like blink enemy red *** 
+            // Turn red when hit
+            capsule.GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }
 }

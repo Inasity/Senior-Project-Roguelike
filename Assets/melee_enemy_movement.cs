@@ -6,8 +6,6 @@ public class melee_enemy_movement : MonoBehaviour
 {
     // Enemy movement variables
     public float speed = 10.0f;
-    public float accel = 14.0f;
-    public float maxVelocityChange = 10.0f;
 
     // Private variables
     private Transform player;
@@ -33,13 +31,8 @@ public class melee_enemy_movement : MonoBehaviour
         Vector3 velocity = dir * step;
         velocity.y = 0;
 
-        // Move to player
-        if(step > dist){
-            // If close enough to the player, do something *** Add melee damage code ***
-
-            // Stop when touching player
-            transform.position = player.position;
-        } else {
+        // Move to player if distance too far
+        if(step + 1f <= dist){
             transform.position = transform.position + (dir * step);
         }
     }
