@@ -6,10 +6,10 @@ public class Range_enemy_movement : MonoBehaviour
 {
     // Enemy movement variables
     public float speed = 5.0f;
+    public float STOP_DISTANCE = 10f;
 
     // Private variables
     private Transform player;
-    private const float STOP_DISTANCE = 10f;
     private float step;
 
     // Pathing variables
@@ -27,6 +27,9 @@ public class Range_enemy_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Look at player
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+
         // Repath to player every frame
         path = player.position - transform.position;
         dist = path.magnitude;
@@ -39,9 +42,10 @@ public class Range_enemy_movement : MonoBehaviour
             transform.position = transform.position + (dir * step);
         
             // Stop shooting script
-
+            GetComponent<Enemy_range_damage>().enabled = false;
         } else {
             // Enable shooting script
+            GetComponent<Enemy_range_damage>().enabled = true;
         }
     }
 

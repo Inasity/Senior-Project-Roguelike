@@ -7,10 +7,14 @@ public class BulletScript : MonoBehaviour
 
     public float speed = 20f;
     public Rigidbody rb;
+    private Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set player transform
+        player = GameObject.Find("Player").transform;
+
         rb.velocity = transform.forward * speed;
     }
 
@@ -23,6 +27,14 @@ public class BulletScript : MonoBehaviour
     void OnTriggerEnter (Collider hitInfo)
     {
         // Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+        // Check collision tag to make sure projectiles don't destroy eachother
+        if(hitInfo.tag != "Weapon"){
+            Destroy(gameObject);
+        }
+
+        // If a bullet has hit a player, reduce health
+        if(hitInfo.name == "Player"){
+            player.GetComponent<Health>().health--;
+        }
     }
 }

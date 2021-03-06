@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy_melee_damage : MonoBehaviour
 {
     // Variables    
-    public float health;                    // Health of player
     private float speed;                    // Speed from melee enemy movements
     private Transform player;               // To get player position
     private const float HIT_COOLDOWN = 1f;  // Cooldown for damaging the player
@@ -17,9 +16,6 @@ public class Enemy_melee_damage : MonoBehaviour
     {
         // Set player transform
         player = GameObject.Find("Player").transform;
-
-        // Grab player health
-        health = player.GetComponent<Health>().health;
         
         // Get the speed of this melee enemy from it's movement script
         speed = gameObject.GetComponent<melee_enemy_movement>().speed;

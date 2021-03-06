@@ -42,6 +42,9 @@ public class enemy_health : MonoBehaviour
             if(damageTimeElapse < 0){
                 damageTimeElapse = DAMAGE_TIMER_COOLDOWN;
                 capsule.GetComponent<MeshRenderer>().material.color = Color.white;
+                if(capsule.transform.childCount > 0){
+                    capsule.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.white;
+                }
             }
         }
         // Check if no more health left
@@ -69,6 +72,9 @@ public class enemy_health : MonoBehaviour
             // *** Do stuff when hit, like blink enemy red *** 
             // Turn red when hit
             capsule.GetComponent<MeshRenderer>().material.color = Color.red;
+            if(capsule.transform.childCount > 0){
+                capsule.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.red;
+            }
         }
     }
 }
