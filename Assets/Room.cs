@@ -7,8 +7,8 @@ public class Room : MonoBehaviour
 
     public int Width;
     public int Height;
+    public int Z;
     public int X;
-    public int Y;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +17,18 @@ public class Room : MonoBehaviour
             Debug.Log("You pressed play in the wrong scene chief");
             return;
         }
+
+        RoomController.instance.RegisterRoom(this);
     }
 
     public Vector3 GetRoomCentre()
     {
-        return new Vector3( X * Width, Y * Height);
+        return new Vector3( Z * Width, X * Height);
     }
 
-    void OnDrawnGizmos()
+    void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(Width, Height, 0));
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position, new Vector3(Height, 0, Width));
     }
 }
