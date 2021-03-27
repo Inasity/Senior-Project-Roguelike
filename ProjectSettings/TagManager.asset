@@ -8,6 +8,7 @@ TagManager:
   - Melee Enemy
   - Range Enemy
   - Weapon
+  - Item
   layers:
   - Default
   - TransparentFX

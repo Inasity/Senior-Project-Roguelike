@@ -20,6 +20,9 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // No negative health
+        if(health <= 0) health = 0;
+        
         if(health > numOfHearts)
         {
             health = numOfHearts;
