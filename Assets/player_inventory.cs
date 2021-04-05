@@ -36,6 +36,7 @@ public class player_inventory : MonoBehaviour
 
     // DNA is game currency
     public int DNA;
+    
     // Start is called before the first frame update
     void Start()
     {
