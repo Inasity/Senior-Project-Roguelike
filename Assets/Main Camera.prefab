@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8449429334863257647}
   - component: {fileID: 8449429334863257645}
-  - component: {fileID: 8449429334863257644}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: MainCamera
@@ -76,14 +75,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8449429334863257644
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8449429334863257646}
-  m_Enabled: 1
 --- !u!1 &8449429335426203655
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +86,7 @@ GameObject:
   - component: {fileID: 8449429335426203650}
   - component: {fileID: 8449429335426203653}
   - component: {fileID: 8449429335426203652}
+  - component: {fileID: 397193465}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -168,6 +160,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8449429335426203655}
   m_Enabled: 1
+--- !u!114 &397193465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449429335426203655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c504a77648c2c064f8821d6d6b8baf4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currRoom: {fileID: 0}
+  moveSpeedWhenRoomChange: 300
 --- !u!1 &8449429336504436390
 GameObject:
   m_ObjectHideFlags: 0

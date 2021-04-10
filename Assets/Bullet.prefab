@@ -126,3 +126,4 @@ MonoBehaviour:
   speed: 50
   rb: {fileID: 751467768476207740}
   gravityTimer: 0.5
+  lifeTime: 2
