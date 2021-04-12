@@ -6,7 +6,7 @@ public class Enemy_melee_damage : MonoBehaviour
 {
     // Variables    
     private float speed;                    // Speed from melee enemy movements
-    private Transform player;               // To get player position
+    GameObject player;               // To get player position
     private const float HIT_COOLDOWN = 1f;  // Cooldown for damaging the player
     private float hitTime;                  // Holds the time passed since hit
     bool justHit;                           // no explanation needed
@@ -15,7 +15,7 @@ public class Enemy_melee_damage : MonoBehaviour
     void Start()
     {
         // Set player transform
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
 
         // Grab player health
         //health = Health.health;
@@ -32,7 +32,7 @@ public class Enemy_melee_damage : MonoBehaviour
     void Update()
     {
         // Get distance between player and enemy
-        Vector3 path = player.position - transform.position;
+        Vector3 path = player.transform.position - transform.position;
         float dist = path.magnitude;
         float step = speed * Time.deltaTime;
 

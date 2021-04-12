@@ -160,6 +160,7 @@ Transform:
   m_Children:
   - {fileID: 3701485914968123913}
   - {fileID: 80163206}
+  - {fileID: 8484614985941702581}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,6 +256,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 80163206}
   bullet: {fileID: 4153216337955281346, guid: 93e2664b8ce39414197c71b672d07af9, type: 3}
+  groundLevel: {fileID: 0}
+  grenade: {fileID: 0}
+  trap: {fileID: 0}
+  poison: {fileID: 0}
 --- !u!114 &2321894345271644730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,3 +370,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3817391326859797737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8484614985941702581}
+  m_Layer: 0
+  m_Name: Drop Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8484614985941702581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817391326859797737}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 3701485916164215522}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

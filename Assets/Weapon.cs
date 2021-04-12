@@ -6,10 +6,10 @@ public class Weapon : MonoBehaviour
 {
     // Shooting weapons
     public Transform firePoint;
-    private Transform player;
+    GameObject player;
     public GameObject bullet;
 
-    private Vector3 groundLevel;
+    public Transform groundLevel;
     
     // item backpack
     int cycle = 0;
@@ -24,19 +24,19 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         // Set player transform
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         // Get ground level at player position 
-        groundLevel = new Vector3 (transform.position.x, GameObject.Find("Plane").transform.position.y, transform.position.z);
+        //groundLevel = new Vector3 (transform.position.x, GameObject.Find("Plane").transform.position.y, transform.position.z);
         // Shoot
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
+        // if (Input.GetButtonDown("Fire1"))
+        // {
+        //     Shoot();
+        // }
 
         // Cycle throwables
         if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == null){
@@ -73,10 +73,10 @@ public class Weapon : MonoBehaviour
 
     }
 
-    void Shoot ()
-    {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
-    }
+    // void Shoot ()
+    // {
+    //     Instantiate(bullet, firePoint.position, firePoint.rotation);
+    // }
 
     void Throw( GameObject throwable)
     {
@@ -90,7 +90,7 @@ public class Weapon : MonoBehaviour
             throwItem.GetComponent<Collider>().isTrigger = false;
             // Give it upwards velocity where aiming
             Rigidbody throwItemRB = throwItem.AddComponent<Rigidbody>();
-            throwItemRB.AddForce((firePoint.forward * 5f) + (Vector3.up * 5f), ForceMode.Impulse);
+            throwItemRB.AddForce((firePoint.forward * 25f) + (Vector3.up * 25f), ForceMode.Impulse);
         } else if(throwItem.name == "poison(Clone)"){
             throwItem.GetComponent<poison_script>().enabled = true;
         }
@@ -98,10 +98,10 @@ public class Weapon : MonoBehaviour
         
     }
 
-    void Place(GameObject placeable, Vector3 _groundLevel){
+    void Place(GameObject placeable, Transform _groundLevel){
 
         // Spawn in placeable
-        var placeItem = Instantiate(placeable, _groundLevel, transform.rotation);
+        var placeItem = Instantiate(placeable, _groundLevel.position, transform.rotation);
         placeItem.tag = "Weapon";
     }
 }

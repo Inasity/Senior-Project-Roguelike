@@ -8,13 +8,13 @@ public class melee_enemy_movement : MonoBehaviour
     public float speed = 10.0f;
 
     // Private variables
-    private Transform player;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         // Set player transforms
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class melee_enemy_movement : MonoBehaviour
     {
         // if in the same room, set the path to player
         // *** check room here ***
-        Vector3 path = player.position - transform.position;
+        Vector3 path = player.transform.position - transform.position;
         
         // Pathing variables
         float dist = path.magnitude;
