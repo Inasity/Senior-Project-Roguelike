@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class explosion_script : MonoBehaviour
+public class poison_script : MonoBehaviour
 {
-    float explosionTimer;
+    public float poisonTimer = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,11 @@ public class explosion_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        explosionTimer += Time.deltaTime;
-        if(explosionTimer >= .3f){
+        // Count down
+        poisonTimer -= Time.deltaTime;
+
+        // When timer is up, destroy poison
+        if(poisonTimer <= 0){
             Destroy(gameObject);
         }
     }

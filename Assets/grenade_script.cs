@@ -6,12 +6,10 @@ public class grenade_script : MonoBehaviour
 {
     public float timeDelay = 2f;
     float startTimer;
-    float explosionTimer;
     public GameObject explosion;
-
     public int damage = 2;
-    public float explosiveForce = 10f;
-    public float explosiveRadius = 5f;
+    public float explosiveForce = 200f;
+    public float explosiveRadius = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +23,38 @@ public class grenade_script : MonoBehaviour
         startTimer += Time.deltaTime;
         if(startTimer >= timeDelay){
             Explode();
-            GameObject explosionObject = Instantiate(explosion, transform.position, transform.rotation);
         }
     }
 
     void Explode(){
+        explosionEffect();
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveRadius);
 
         foreach(Collider nearbyObject in colliders){
+            // Debug.Log(nearbyObject.name);
+            // Explosion force
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if(rb != null){ 
+                rb.AddExplosionForce(explosiveForce, transform.position, explosiveRadius);
+            }
+
             // Do damage to enemies
+            if(nearbyObject.tag == "Range Enemy" || nearbyObject.tag == "Melee Enemy"){
+                nearbyObject.GetComponent<enemy_health>().DamageEnemy(gameObject.GetComponent<Collider>());
+            }
         }
 
         Destroy(gameObject);
+    }
+
+    void explosionEffect(){
+        // Explosion effect
+        GameObject explosionObject = Instantiate(explosion, transform.position, transform.rotation);
+
+        // Grow explosion over time
+        explosionObject.transform.localScale += new Vector3(5f,5f,5f);
+
+        Destroy(explosionObject, .13f);
     }
 }

@@ -83,7 +83,7 @@ public class player_inventory : MonoBehaviour
                         break;
                     }
                 }
-            } else if (other.name == "grenade"){
+            } else if (other.name == "grenade" || other.name == "trap" || other.name == "gas"){
                 // *** ^ Add in names of other items in above conditional ^ ***
 
                 // Check if the item backpack has empty spot
