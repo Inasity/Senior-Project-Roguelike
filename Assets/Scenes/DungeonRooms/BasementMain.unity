@@ -531,11 +531,6 @@ PrefabInstance:
       propertyPath: StimpsText
       value: 
       objectReference: {fileID: 747931560}
-    - target: {fileID: 2321894345271644730, guid: 96976135af573fc4898b5d3366b08b7b,
-        type: 3}
-      propertyPath: Stimps_Sprite
-      value: 
-      objectReference: {fileID: 747931560}
     - target: {fileID: 3701485916164215522, guid: 96976135af573fc4898b5d3366b08b7b,
         type: 3}
       propertyPath: m_RootOrder
@@ -594,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 3701485916164215523, guid: 96976135af573fc4898b5d3366b08b7b,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Juan_Player
       objectReference: {fileID: 0}
     - target: {fileID: 4052423893213700520, guid: 96976135af573fc4898b5d3366b08b7b,
         type: 3}
