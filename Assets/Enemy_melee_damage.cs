@@ -18,7 +18,7 @@ public class Enemy_melee_damage : MonoBehaviour
         player = GameObject.Find("Player").transform;
 
         // Grab player health
-        health = Health.health;
+        //health = Health.health;
         
         // Get the speed of this melee enemy from it's movement script
         speed = gameObject.GetComponent<melee_enemy_movement>().speed;

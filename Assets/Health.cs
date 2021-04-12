@@ -21,17 +21,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
-        // No negative health
-        if(health <= 0) health = 0;
-        
-=======
-
->>>>>>> 60e6b8d41ca9185e84814266f7de97a7843deb36
->>>>>>> Stashed changes
         if(health > numOfHearts)
         {
             health = numOfHearts;
@@ -67,6 +56,7 @@ public class Health : MonoBehaviour
         {
             KillPlayer();
         }
+        if(health <= 0) health = 0;
     }
 
     private static void KillPlayer()

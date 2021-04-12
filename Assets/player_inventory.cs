@@ -56,7 +56,7 @@ public class player_inventory : MonoBehaviour
         if(other.tag == "Item"){
             // Check what item it was before destroying
             if(other.name == "health_item"){
-                transform.GetComponent<Health>().health++;
+                Health.health++;
                 // Destroy the item
                 Destroy(other.gameObject);
             } else if (other.name == "dna"){
