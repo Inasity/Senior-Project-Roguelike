@@ -16,6 +16,9 @@ public class Enemy_melee_damage : MonoBehaviour
     {
         // Set player transform
         player = GameObject.Find("Player").transform;
+
+        // Grab player health
+        health = Health.health;
         
         // Get the speed of this melee enemy from it's movement script
         speed = gameObject.GetComponent<melee_enemy_movement>().speed;
@@ -36,7 +39,7 @@ public class Enemy_melee_damage : MonoBehaviour
         // If within hitting distance, do damage
         if(step + 1f >= dist){
             // Lower the player health if no cooldown
-            if(hitTime <= 0) player.GetComponent<Health>().health--;
+            if(hitTime <= 0) Health.health--;
 
             justHit = true;
         }
