@@ -69,6 +69,12 @@ public class Health : MonoBehaviour
         health = Mathf.Min(numOfHearts, health + healAmount);
     }
 
+    public static void IncreasePlayerHealth(int increaseAmount)
+    {
+        numOfHearts += increaseAmount;
+        health += increaseAmount;
+    }
+
     public static void AddStimp(float stimp)
     {
         PlayerController.Stimpies += stimp;

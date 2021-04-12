@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonRooms/BasementEnd.unity
     guid: 18c72bf3549694d4f9f27e6b10b55e78
   - enabled: 1
-    path: Assets/Scenes/DungeonRooms/BasementBasic1.unity
+    path: Assets/Scenes/DungeonRooms/BasementBasicMelee.unity
     guid: f6d95b2726498d442928c0a61a719339
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementBasicRanged.unity
+    guid: ff99a4817f9f20d459d71d467b505082
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/BasementBasicMixed.unity
+    guid: 362857e098cac5f448681549d7a3870c
   m_configObjects: {}

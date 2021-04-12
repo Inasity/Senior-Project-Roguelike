@@ -23,6 +23,7 @@ public class CollectionController : MonoBehaviour
     public float attackSpeedChange;
 
     public float bulletSizeChange;
+    public int healthMaxChange;
 
     public float stimpChange;
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class CollectionController : MonoBehaviour
         {
             PlayerController.collectedAmount++;
             Health.HealPlayer(healthChange);
+            Health.IncreasePlayerHealth(healthMaxChange);
             Health.AddStimp(stimpChange);
             PlayerController.MoveSpeedChange(moveSpeedChange);
             PlayerController.FireRateChange(attackSpeedChange);

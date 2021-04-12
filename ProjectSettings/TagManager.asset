@@ -10,6 +10,7 @@ TagManager:
   - Range Enemy
   - Weapon
   - Item
+  - Wall
   layers:
   - Default
   - TransparentFX

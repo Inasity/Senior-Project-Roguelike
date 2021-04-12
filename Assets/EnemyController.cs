@@ -11,11 +11,18 @@ public enum EnemyState
     Attack
 };
 
+public enum EnemyType
+{
+    Melee,
+    Ranged
+};
+
 public class EnemyController : MonoBehaviour
 {
     
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
+    public EnemyType enemyType;
     public float range;
     public float speed;
     private bool chooseDir = false;
@@ -25,6 +32,8 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     public float attackRange;
     public bool notInRoom = false;
+    public GameObject bulletPrefab;
+    public float Health;
 
     void Start()
     {
@@ -83,7 +92,7 @@ public class EnemyController : MonoBehaviour
     private IEnumerator ChooseDirection()
     {
         chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(2f, 8f));
+        yield return new WaitForSeconds(Random.Range(1f, 4f));
         randomDir = new Vector3(0, Random.Range(0, 360), 0); //rotates enemy along the y-axis
         Quaternion nextRotation = Quaternion.Euler(randomDir);
         transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
@@ -113,14 +122,36 @@ public class EnemyController : MonoBehaviour
     {
         if(!coolDownAttack)
         {
-            player.GetComponent<Health>().DamagePlayer(1);
-            StartCoroutine(CoolDown());
+            switch(enemyType)
+            {
+                case(EnemyType.Melee):
+                    player.GetComponent<Health>().DamagePlayer(1);
+                    StartCoroutine(CoolDown());
+                break;
+                case(EnemyType.Ranged):
+                    GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletScript>().GetPlayer(player.transform);
+                    bullet.GetComponent<BulletScript>().isEnemyBullet = true;
+                    
+                    StartCoroutine(CoolDown());
+                    Debug.Log("Enemy fired");
+                break;
+            }
         }
     }
 
     public void Death()
     {
         Destroy(gameObject);
+    }
+
+    public void DamageEnemy(float damage)
+    {
+        Health -= damage;
+        if (Health <= 0)
+        {
+            Death();
+        }
     }
 
     private IEnumerator CoolDown()

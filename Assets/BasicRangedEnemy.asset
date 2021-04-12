@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54e45c62ae492c943b84b639539197bb, type: 3}
-  m_Name: BasicMeleeEnemy
+  m_Name: BasicRangedEnemy
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 561657696562363742, guid: 16de538d50b41054aa09fb486a4ff7fc,
+  itemToSpawn: {fileID: 6358600777361603431, guid: b63fd23a7550f5c498f4b83ea70a2e2c,
     type: 3}
-  minSpawn: 5
-  maxSpawn: 12
+  minSpawn: 4
+  maxSpawn: 8

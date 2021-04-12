@@ -105,7 +105,14 @@ public class PlayerController : MonoBehaviour
 
     public static void FireRateChange(float rate)
     {
-        fireDelay -= rate;
+        if (fireDelay > 0.1f)
+        {
+            fireDelay -= rate;
+        }
+        if (fireDelay <= 0f)
+        {
+            fireDelay = 0.1f;
+        }
     }
 
     public static void BulletSizeChange(float size)
