@@ -48,7 +48,7 @@ public class SC_TopDownController : MonoBehaviour
         );
 
         //Hide the cursor
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     void FixedUpdate()
@@ -104,7 +104,7 @@ public class SC_TopDownController : MonoBehaviour
         offsetVector = cursorPosition - playerPosOnScreen;
 
         //Camera follow
-        playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * 7.4f);
+        //playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * 7.4f);
         // playerCamera.transform.position = new Vector3(transform.position.x, cameraHeight, transform.position.z);
         //playerCamera.transform.LookAt(transform.position);
         //playerCamera.transform.LookAt(transform.position + new Vector3(-offsetVector.y * 2, 0, offsetVector.x * 2));

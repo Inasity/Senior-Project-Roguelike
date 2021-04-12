@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Room
   - Enemy
   - Melee Enemy
   - Range Enemy
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bullets
+  - Virtual Scene
   - 
   - 
   - 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e45c62ae492c943b84b639539197bb, type: 3}
+  m_Name: BasicMeleeEnemy
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 561657696562363742, guid: 16de538d50b41054aa09fb486a4ff7fc,
+    type: 3}
+  minSpawn: 2
+  maxSpawn: 6
