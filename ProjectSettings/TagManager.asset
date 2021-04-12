@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Room
   - Enemy
+  - Melee Enemy
+  - Range Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX

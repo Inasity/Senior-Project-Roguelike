@@ -49,6 +49,7 @@ public class BulletScript : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
+        // Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
 }
