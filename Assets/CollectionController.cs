@@ -24,7 +24,7 @@ public class CollectionController : MonoBehaviour
 
     public float bulletSizeChange;
     public int healthMaxChange;
-
+    public float bulletdamagechange;
     public float stimpChange;
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,7 @@ public class CollectionController : MonoBehaviour
             PlayerController.MoveSpeedChange(moveSpeedChange);
             PlayerController.FireRateChange(attackSpeedChange);
             PlayerController.BulletSizeChange(bulletSizeChange);
+            PlayerController.BulletDamageChange(bulletdamagechange);
             Destroy(gameObject);
         }
     }

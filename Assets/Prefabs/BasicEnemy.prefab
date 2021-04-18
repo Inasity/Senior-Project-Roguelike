@@ -107,9 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currState: 0
-  range: 150
+  enemyType: 0
+  range: 250
   speed: 20
   coolDown: 1.25
   attackRange: 4.9
   notInRoom: 0
+  bulletPrefab: {fileID: 0}
   Health: 3

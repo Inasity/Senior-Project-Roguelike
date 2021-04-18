@@ -52,7 +52,7 @@ public class BulletScript : MonoBehaviour
         if (hitInfo.tag == "Enemy" && !isEnemyBullet)
         {
         Debug.Log(hitInfo.name);
-        hitInfo.gameObject.GetComponent<EnemyController>().DamageEnemy(1);
+        hitInfo.gameObject.GetComponent<EnemyController>().DamageEnemy(PlayerController.bulletDamage);
         Destroy(gameObject);
         Debug.Log("Hit an enemy");
         }

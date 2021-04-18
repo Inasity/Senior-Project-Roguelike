@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public static float moveSpeed = 17f;  //20f feels like good speed to start with, maybe lower like 17f
+    public static float moveSpeed = 20f;  //20f feels like good speed to start with, maybe lower like 17f
     Rigidbody rigidbody;
     public GameObject bulletPrefab;
     public float bulletSpeed;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public static int collectedAmount = 0;
     public static float bulletSize = 5;
     public static float Stimpies = 0;
+    public static float bulletDamage = 1f;
 
     public Text StimpsText;
 
@@ -118,6 +119,11 @@ public class PlayerController : MonoBehaviour
     public static void BulletSizeChange(float size)
     {
         bulletSize += size;
+    }
+
+    public static void BulletDamageChange(float damage)
+    {
+        bulletDamage += damage;
     }
 
 }
