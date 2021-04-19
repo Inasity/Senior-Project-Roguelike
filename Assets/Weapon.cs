@@ -59,7 +59,7 @@ public class Weapon : MonoBehaviour
             // Check if current cycle is not empty, then throw item
             if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName != null){
                 // Check the name of the object
-                if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade(Clone)"){
+                if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade"){
                     // Call throw
                     Throw(grenade);
                 } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap(Clone)"){

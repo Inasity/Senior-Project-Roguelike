@@ -3638,7 +3638,7 @@ PrefabInstance:
     - target: {fileID: 5674461960837711403, guid: 521d862469e556943b8c22ab32a21de8,
         type: 3}
       propertyPath: m_TagString
-      value: Room
+      value: Boss Room
       objectReference: {fileID: 0}
     - target: {fileID: 5674461960941474304, guid: 521d862469e556943b8c22ab32a21de8,
         type: 3}
@@ -3873,7 +3873,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh81724
+  m_Name: pb_Mesh67968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4036,7 +4036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-54834
+  m_Name: pb_Mesh-222940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4199,7 +4199,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh108150
+  m_Name: pb_Mesh68188
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4673,7 +4673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh107912
+  m_Name: pb_Mesh67950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8095,7 +8095,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh81786
+  m_Name: pb_Mesh68030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

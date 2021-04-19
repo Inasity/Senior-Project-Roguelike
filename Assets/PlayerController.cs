@@ -6,18 +6,22 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static float moveSpeed = 20f;  //20f feels like good speed to start with, maybe lower like 17f
+    public static float moveSpeedStart = 20f;
     Rigidbody rigidbody;
     public GameObject bulletPrefab;
     public float bulletSpeed;
     private float lastFire;
     public static float fireDelay = .5f;
+    public static float fireDelayStart = .5f;
     public Transform firePoint;
     public static int collectedAmount = 0;
     public static float bulletSize = 5;
+    public static float bulletSizeStart = 5;
     public static float Stimpies = 0;
     public static float bulletDamage = 1f;
-
+    public static float bulletDamageStart = 1f;
     public Text StimpsText;
+    public GameObject levelloader;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +75,7 @@ public class PlayerController : MonoBehaviour
         }
             }
 
-        if (Input.GetKeyDown("space") && Stimpies > 0)
+        if (Input.GetKeyDown("space") && Stimpies > 0 && Health.health < Health.numOfHearts)
         {
             Health.HealPlayer(1);
             Stimpies--;
@@ -124,6 +128,27 @@ public class PlayerController : MonoBehaviour
     public static void BulletDamageChange(float damage)
     {
         bulletDamage += damage;
+    }
+    public static void resetStats(float speed, float fireRate, float size, float damage)
+    {
+        moveSpeed = speed;
+        fireDelay = fireRate;
+        bulletSize = size;
+        bulletDamage = damage;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Boss Room")
+        {
+            StartCoroutine(WinGame());
+        }
+    }
+
+    IEnumerator WinGame()
+    {
+        yield return new WaitForSeconds(1);
+        levelloader.GetComponent<LevelLoader>().LoadVictoryScreen();
     }
 
 }

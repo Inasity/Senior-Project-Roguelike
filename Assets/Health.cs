@@ -8,9 +8,12 @@ public class Health : MonoBehaviour
 
     public static float health = 3;
     public static int numOfHearts = 3;
+    public static float startingHealth = 3;
+    public static int startingHearts = 3;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public GameObject levelloader;
 
     // Start is called before the first frame update
     void Start()
@@ -59,8 +62,9 @@ public class Health : MonoBehaviour
         if(health <= 0) health = 0;
     }
 
-    private static void KillPlayer()
+    private void KillPlayer()
     {
+        levelloader.GetComponent<LevelLoader>().LoadNextLevel();
 
     }
 
@@ -78,5 +82,10 @@ public class Health : MonoBehaviour
     public static void AddStimp(float stimp)
     {
         PlayerController.Stimpies += stimp;
+    }
+    public static void resetHealth(float hp, int hearts)
+    {
+        health = hp;
+        numOfHearts = hearts;
     }
 }

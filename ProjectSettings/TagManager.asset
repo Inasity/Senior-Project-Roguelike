@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - Item
   - Wall
+  - Boss Room
   layers:
   - Default
   - TransparentFX

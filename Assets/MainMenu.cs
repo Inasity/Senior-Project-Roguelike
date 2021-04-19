@@ -13,6 +13,15 @@ public class MainMenu : MonoBehaviour
         levelloader.GetComponent<LevelLoader>().LoadNextLevel();
     }
 
+    public void ReplayGame()
+    {
+        levelloader.GetComponent<LevelLoader>().LoadPreviousLevel();
+    }
+    public void GoBackToGame()
+    {
+        levelloader.GetComponent<LevelLoader>().LoadGameLevel();
+    }
+
     public void QuitGame()
     {
         Debug.Log("Game quit");

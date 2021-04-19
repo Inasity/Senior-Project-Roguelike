@@ -22,6 +22,25 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+    public void LoadPreviousLevel()
+    {
+        Health.resetHealth(Health.startingHealth, Health.startingHearts);
+        PlayerController.resetStats(PlayerController.moveSpeedStart, PlayerController.fireDelayStart, PlayerController.bulletSizeStart, PlayerController.bulletDamageStart);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
+    }
+
+    public void LoadVictoryScreen()
+    {
+        StartCoroutine(LoadLevel(3));
+    }
+
+    public void LoadGameLevel()
+    {
+        Health.resetHealth(Health.startingHealth, Health.startingHearts);
+        PlayerController.resetStats(PlayerController.moveSpeedStart, PlayerController.fireDelayStart, PlayerController.bulletSizeStart, PlayerController.bulletDamageStart);
+        StartCoroutine(LoadLevel(1));
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");

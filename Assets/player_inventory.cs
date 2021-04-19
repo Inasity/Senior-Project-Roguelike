@@ -55,15 +55,22 @@ public class player_inventory : MonoBehaviour
         // Check if player has collided with an item
         if(other.tag == "Item"){
             // Check what item it was before destroying
-            if(other.name == "health_item" || other.name == "health_item(Clone)"){
+            if(other.name == "health_item" || other.name == "health_item(Clone)")
+            {
                 Health.health++;
                 // Destroy the item
                 Destroy(other.gameObject);
-            } else if (other.name == "dna" || other.name == "dna(Clone)"){
+            } 
+            
+            else if (other.name == "dna" || other.name == "dna(Clone)")
+            {
                 DNA += 1;
                 // Destroy the item
                 Destroy(other.gameObject);
-            } else if (other.name == "Key" || other.name == "Key(Clone)"){
+            } 
+            
+            else if (other.name == "Key" || other.name == "Key(Clone)")
+            {
                 // Check if the key backpack has empty spot
                 for(int c = 0; c < BACKPACK_SIZE; c++){
                     if(keyBackpack[c].keyUnlocks == null){
