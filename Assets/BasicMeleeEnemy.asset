@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e45c62ae492c943b84b639539197bb, type: 3}
   m_Name: BasicMeleeEnemy
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 561657696562363742, guid: 16de538d50b41054aa09fb486a4ff7fc,
+  itemToSpawn: {fileID: 561657696562363742, guid: 25eeef52b8cf08c4c977d3ccf830ede5,
     type: 3}
-  minSpawn: 5
-  maxSpawn: 12
+  minSpawn: 3
+  maxSpawn: 8

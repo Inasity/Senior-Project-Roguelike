@@ -159,7 +159,7 @@ public class RoomController : MonoBehaviour
     {
         string[] possibleRooms = new string[]
         {
-            "Empty",
+            //"Empty",
             "BasicMelee",
             "BasicRanged",
             "BasicMixed"

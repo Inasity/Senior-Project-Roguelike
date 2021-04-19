@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
     {
         if(!chooseDir)
         {
-            StartCoroutine(ChooseDirection());
+            //StartCoroutine(ChooseDirection());
         }
 
         transform.position += -transform.right * speed * Time.deltaTime;

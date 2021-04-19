@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e45c62ae492c943b84b639539197bb, type: 3}
   m_Name: BasicRangedEnemy
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 6358600777361603431, guid: b63fd23a7550f5c498f4b83ea70a2e2c,
+  itemToSpawn: {fileID: 6358600777361603431, guid: 760005aeb761bba44ba134795ba9b73a,
     type: 3}
-  minSpawn: 4
-  maxSpawn: 8
+  minSpawn: 3
+  maxSpawn: 6
