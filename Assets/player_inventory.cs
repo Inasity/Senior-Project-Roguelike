@@ -55,15 +55,15 @@ public class player_inventory : MonoBehaviour
         // Check if player has collided with an item
         if(other.tag == "Item"){
             // Check what item it was before destroying
-            if(other.name == "health_item"){
+            if(other.name == "health_item" || other.name == "health_item(Clone)"){
                 Health.health++;
                 // Destroy the item
                 Destroy(other.gameObject);
-            } else if (other.name == "dna"){
+            } else if (other.name == "dna" || other.name == "dna(Clone)"){
                 DNA += 1;
                 // Destroy the item
                 Destroy(other.gameObject);
-            } else if (other.name == "Key"){
+            } else if (other.name == "Key" || other.name == "Key(Clone)"){
                 // Check if the key backpack has empty spot
                 for(int c = 0; c < BACKPACK_SIZE; c++){
                     if(keyBackpack[c].keyUnlocks == null){
@@ -83,7 +83,7 @@ public class player_inventory : MonoBehaviour
                         break;
                     }
                 }
-            } else if (other.name == "grenade" || other.name == "trap" || other.name == "gas"){
+            } else if (other.name == "grenade" || other.name == "trap" || other.name == "gas" || other.name == "grenade(Clone)" || other.name == "trap(Clone)" || other.name == "gas(Clone)"){
                 // *** ^ Add in names of other items in above conditional ^ ***
 
                 // Check if the item backpack has empty spot

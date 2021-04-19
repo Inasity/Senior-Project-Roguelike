@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     GameObject player;
     public GameObject bullet;
 
-    public Transform groundLevel;
+    public float groundLevel = .25f;
     
     // item backpack
     int cycle = 0;
@@ -19,6 +19,8 @@ public class Weapon : MonoBehaviour
     public GameObject trap;
 
     public GameObject poison;
+
+    public float throwForce = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -57,12 +59,12 @@ public class Weapon : MonoBehaviour
             // Check if current cycle is not empty, then throw item
             if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName != null){
                 // Check the name of the object
-                if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade"){
+                if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade(Clone)"){
                     // Call throw
                     Throw(grenade);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap"){
-                    Place(trap, groundLevel);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas"){
+                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap(Clone)"){
+                    Place(trap);
+                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas(Clone)"){
                     Throw(poison);
                 }
 
@@ -81,27 +83,22 @@ public class Weapon : MonoBehaviour
     void Throw( GameObject throwable)
     {
         // Spawn in throwable and give weapon tag
-        var throwItem = Instantiate(throwable, firePoint.position, firePoint.rotation);
+        var throwItem = Instantiate(throwable, new Vector3 (transform.position.x - 5, groundLevel, transform.position.z), firePoint.rotation);
         throwItem.tag = "Weapon";
 
         // Use object script
         if(throwItem.name == "grenade(Clone)"){
             throwItem.GetComponent<grenade_script>().enabled = true;
-            throwItem.GetComponent<Collider>().isTrigger = false;
-            // Give it upwards velocity where aiming
-            Rigidbody throwItemRB = throwItem.AddComponent<Rigidbody>();
-            throwItemRB.AddForce((firePoint.forward * 25f) + (Vector3.up * 25f), ForceMode.Impulse);
+            // throwItem.GetComponent<Collider>().isTrigger = false;
         } else if(throwItem.name == "poison(Clone)"){
             throwItem.GetComponent<poison_script>().enabled = true;
         }
-
-        
     }
 
-    void Place(GameObject placeable, Transform _groundLevel){
+    void Place(GameObject placeable){
 
         // Spawn in placeable
-        var placeItem = Instantiate(placeable, _groundLevel.position, transform.rotation);
+        var placeItem = Instantiate(placeable, new Vector3 (transform.position.x - 5, groundLevel, transform.position.z), transform.rotation);
         placeItem.tag = "Weapon";
     }
 }
