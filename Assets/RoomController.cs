@@ -161,7 +161,12 @@ public class RoomController : MonoBehaviour
         {
             "BasicMelee",
             "BasicRanged",
-            "BasicMixed"
+            "BasicMixed",
+            "StrongMelee",
+            "StrongRanged",
+            "StrongMixed",
+            "RangedMixed",
+            "MeleeMixed"
         };
 
         return possibleRooms[Random.Range(0, possibleRooms.Length)];

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a595a17c269e84691ff174c0da234b, type: 3}
-  m_Name: DungeonGenerationData
+  m_Script: {fileID: 11500000, guid: 54e45c62ae492c943b84b639539197bb, type: 3}
+  m_Name: RangedStrongMixedSpawner
   m_EditorClassIdentifier: 
-  numberOfCrawlers: 5
-  iterationMin: 4
-  iterationMax: 6
+  itemToSpawn: {fileID: 6358600777361603431, guid: ec66139007d99f648b784d85d49cc55d,
+    type: 3}
+  minSpawn: 1
+  maxSpawn: 2
