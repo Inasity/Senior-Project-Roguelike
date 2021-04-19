@@ -45,7 +45,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7064164, y: 2.1666174, z: 1}
+  m_Size: {x: 1.7, y: 1.7, z: 1}
   m_Center: {x: -0.010376739, y: -0.074088, z: 0}
 --- !u!114 &4299310292018946526
 MonoBehaviour:
@@ -64,7 +64,7 @@ MonoBehaviour:
   range: 250
   speed: 20
   coolDown: 1.25
-  attackRange: 4.9
+  attackRange: 6.7
   notInRoom: 0
   bulletPrefab: {fileID: 0}
   Health: 3
