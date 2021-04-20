@@ -14,19 +14,18 @@ public class ExplosionScript : MonoBehaviour
         gameObject.transform.localScale += new Vector3(explosionGrowth,explosionGrowth,explosionGrowth);
     }
 
-    void OnTriggerEnter(Collider nearbyObject)
+    void OnTriggerEnter(Collider enemy)
     {
-        //Debug.Log(nearbyObject.name);
-
         // Do damage to enemies
-        if(nearbyObject.tag == "Enemy"){
+        if(enemy.tag == "Enemy"){
+            Debug.Log("Exploded enemy " + enemy.name);
             // Explosion force on enemy transform
                 // Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
                 // if(rb != null){ 
                 //     rb.AddExplosionForce(explosiveForce, transform.position, explosiveRadius);
                 // }
 
-            nearbyObject.GetComponent<EnemyController>().DamageEnemy(grenadeDmg);
+            enemy.GetComponent<EnemyController>().DamageEnemy(grenadeDmg);
         }
     }
 }

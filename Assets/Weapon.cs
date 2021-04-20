@@ -62,9 +62,9 @@ public class Weapon : MonoBehaviour
                 if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade"){
                     // Call throw
                     Throw(grenade);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap(Clone)"){
+                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap"){
                     Place(trap);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas(Clone)"){
+                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas"){
                     Throw(poison);
                 }
 
