@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     public float groundLevel = .25f;
     
     // item backpack
-    int cycle = 0;
+    public static int cycle = 0;
 
     // Throwables
     public GameObject grenade;
@@ -41,7 +41,8 @@ public class Weapon : MonoBehaviour
         // }
 
         // Cycle throwables
-        if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == null){
+        //player.GetComponent<player_inventory>()
+        if(player_inventory.itemBackpack[cycle].itemName == null){
             // If cycle is over 3, reset to 0
             if(cycle >= 2) cycle = 0;
             else cycle++;
@@ -57,19 +58,19 @@ public class Weapon : MonoBehaviour
         // Throw Item
         if (Input.GetKeyDown(KeyCode.Q)){
             // Check if current cycle is not empty, then throw item
-            if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName != null){
+            if(player_inventory.itemBackpack[cycle].itemName != null){
                 // Check the name of the object
-                if(player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "grenade"){
+                if(player_inventory.itemBackpack[cycle].itemName == "grenade(Clone)" || player_inventory.itemBackpack[cycle].itemName == "grenade"){
                     // Call throw
                     Throw(grenade);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "trap"){
+                } else if (player_inventory.itemBackpack[cycle].itemName == "trap(Clone)" || player_inventory.itemBackpack[cycle].itemName == "trap"){
                     Place(trap);
-                } else if (player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas(Clone)" || player.GetComponent<player_inventory>().itemBackpack[cycle].itemName == "gas"){
+                } else if (player_inventory.itemBackpack[cycle].itemName == "gas(Clone)" || player_inventory.itemBackpack[cycle].itemName == "gas"){
                     Throw(poison);
                 }
 
                 // Delete from player inventory
-                player.GetComponent<player_inventory>().itemBackpack[cycle].itemName = null;
+                player_inventory.itemBackpack[cycle].itemName = null;
             }
         }
 
