@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class poison_script : MonoBehaviour
 {
+    // Poison gas disappears after 5 seconds, and it does
+    // 2 damage every second to all enemies inside
+
     public float poisonTimer = 5;
     public int poisonDPS = 2;
-    public float DPSTimer = 1;
-    private bool inGas = false;
-    private Collider enemy;
+    public float DPSTimer = 1f;
 
     // Update is called once per frame
     void Update()
@@ -17,37 +18,21 @@ public class poison_script : MonoBehaviour
         poisonTimer -= Time.deltaTime;
         DPSTimer -= Time.deltaTime;
 
-        // Do damage when in the gas
-        if(inGas && DPSTimer <= 0 && enemy != null){
-            enemy.GetComponent<EnemyController>().DamageEnemy(poisonDPS);
-            DPSTimer = 1;
-        }
-
-        // When timer is up, destroy poison
+        // When poison timer is up, destroy poison
         if(poisonTimer <= 0){
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter(Collider nearbyObject)
+    void OnTriggerStay(Collider enemy)
     {
-        //Debug.Log(nearbyObject.name);
-
-        // Do damage to enemies
-        if(nearbyObject.tag == "Enemy"){
-            // Explosion force on enemy transform
-                // Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-                // if(rb != null){ 
-                //     rb.AddExplosionForce(explosiveForce, transform.position, explosiveRadius);
-                // }
-
-            enemy = nearbyObject;
-            inGas = true;
+        // Do damage when enemy in the gas
+        if(enemy.tag == "Enemy"){
+            if(DPSTimer <= 0 && enemy != null){
+                Debug.Log("poisoned enemy " + enemy.name);
+                enemy.GetComponent<EnemyController>().DamageEnemy(poisonDPS);
+                DPSTimer = 1;
+            }
         }
-    }
-
-    void OnTriggerExit(Collider nearbyObject)
-    {
-        inGas = false;
     }
 }

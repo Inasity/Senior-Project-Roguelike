@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poisonTimer: 5
   poisonDPS: 2
-  DPSTimer: 1
+  DPSTimer: 0.5
 --- !u!136 &4837236162296683159
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class player_inventory : MonoBehaviour
 
     // Backpacks for keys and items    
     public Key[] keyBackpack = new Key[BACKPACK_SIZE];
-    public Item[] itemBackpack = new Item[BACKPACK_SIZE];
+    public static Item[] itemBackpack = new Item[BACKPACK_SIZE];
 
     // DNA is game currency
     public int DNA;
